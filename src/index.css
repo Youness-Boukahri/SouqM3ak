@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FDFBF7;
+  --color-olive: #3D5A44;
+  --color-clay: #A67C52;
+  --color-ink: #1A1A1A;
+
+  --color-card: #FFFFFF;
+  --color-card-border: rgba(166, 124, 82, 0.05);
+
+  --font-serif: "Playfair Display", "Almarai", serif;
+  --font-sans: "Inter", "Montserrat", sans-serif;
+  --font-arabic: "Almarai", sans-serif;
+
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-ink font-sans antialiased transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  .dark {
+    --color-cream: #0F110E;
+    --color-ink: #FDFBF7;
+    --color-card: #1A1D1A;
+    --color-card-border: rgba(253, 251, 247, 0.05);
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1200ms ease-in-out;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+  }
+}
+
+/* Moroccan Zellige Pattern Overlay */
+.zellige-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5.878 18.09h19.022l-15.39 11.18 5.878 18.09-15.389-11.18-15.389 11.18 5.878-18.09-15.39-11.18h19.022L30 0z' fill='%23A67C52' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
