@@ -53,6 +53,15 @@ const translations = {
       whatsapp: "WHATSAPP FASTLINE",
       form: { name: "FULL NAME", phone: "PHONE NUMBER", city: "CITY", date: "DESIRED DATE", service: "SERVICE TYPE", submit: "Confirm booking" }
     },
+    testimonials: {
+      tag: "TESTIMONIALS",
+      title: "What Our Clients Say",
+      items: [
+        { name: "Hadj Mohamed", role: "Rabat", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150", text: "The expert provided invaluable advice. I found the perfect ram without any stress. Truly a premium experience." },
+        { name: "Fatima Zahra", role: "Casablanca", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150", text: "Excellent transport service. They handled everything from the market to my door with care and professionalism." },
+        { name: "Yassine", role: "Agadir", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150", text: "As a breeder, their logistics support is top-notch. They understand the market dynamics and the livestock needs." }
+      ]
+    },
     footer: { desc: "Preserving Moroccan heritage through modern concierge excellence.", explore: "Explore", company: "Services", news: "Newsletter" }
   },
   FR: {
@@ -73,6 +82,15 @@ const translations = {
       whatsapp: "LIGNE DIRECTE WHATSAPP",
       form: { name: "NOM COMPLET", phone: "NUMÉRO DE TÉLÉPHONE", city: "VILLE", date: "DATE SOUHAITÉE", service: "TYPE DE SERVICE", submit: "Confirmer la réservation" }
     },
+    testimonials: {
+      tag: "TÉMOIGNAGES",
+      title: "Ce Que Disent Nos Clients",
+      items: [
+        { name: "Haj Mohamed", role: "Rabat", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150", text: "L'expert m'a donné des conseils précieux. J'ai trouvé le bélier parfait sans aucun stress. Une expérience premium." },
+        { name: "Fatima Zahra", role: "Casablanca", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150", text: "Excellent service de transport. Ils ont tout géré, du marché à ma porte, avec soin et professionnalisme." },
+        { name: "Yassine", role: "Agadir", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150", text: "En tant qu'éleveur, leur soutien logistique est de premier ordre. Ils comprennent la dynamique du marché." }
+      ]
+    },
     footer: { desc: "Préserver le patrimoine marocain grâce à l'excellence d'une conciergerie moderne.", explore: "Explorer", company: "Services", news: "Newsletter" }
   },
   AR: {
@@ -92,6 +110,15 @@ const translations = {
       desc: "املأ الاستمارة وسنتصل بك في أقرب وقت.",
       whatsapp: "خط واتساب السريع",
       form: { name: "الاسم الكامل", phone: "رقم الهاتف", city: "المدينة", date: "التاريخ المطلوب", service: "نوع الخدمة", submit: "تأكيد الحجز" }
+    },
+    testimonials: {
+      tag: "شهادات الزبناء",
+      title: "ماذا يقول زبناؤنا",
+      items: [
+        { name: "الحاج محمد", role: "الرباط", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150", text: "الخبير قدم ليا نصايح من ذهب. اختاريت حولي مليح بلا صداع الراس. بصح تجربة متميزة." },
+        { name: "فاطمة الزهراء", role: "الدار البيضاء", avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150", text: "خدمة التوصيل كانت في المستوى. تكلفو بكلشي من السوق حتى لباب الدار بكل احترافية." },
+        { name: "ياسين", role: "أكادير", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150", text: "بصفتي كساب، الدعم اللوجستي ديالهم كيعاون بزاف. فاهمين السوق وشنو كيحتاج الكساب." }
+      ]
     },
     footer: { desc: "الحفاظ على التراث المغربي من خلال التميز في الخدمات الحديثة.", explore: "استكشف", company: "الخدمات", news: "النشرة الإخبارية" }
   }
@@ -182,7 +209,11 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className={`min-h-screen bg-cream selection:bg-clay selection:text-white overflow-x-hidden zellige-pattern ${lang === 'AR' ? 'font-arabic' : 'font-sans'} transition-colors duration-300`}>
+    <div className={`min-h-screen bg-cream selection:bg-clay selection:text-white overflow-x-hidden zellige-pattern ${lang === 'AR' ? 'font-arabic' : 'font-sans'} transition-colors duration-300 relative`}>
+      {/* Decorative Ornaments */}
+      <div className="fixed top-0 left-0 w-64 h-64 zellige-pattern opacity-[0.05] pointer-events-none -scale-x-100" />
+      <div className="fixed bottom-0 right-0 w-96 h-96 zellige-pattern opacity-[0.06] pointer-events-none" />
+      
       {/* Navigation */}
       <nav 
         className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out px-4 w-full max-w-4xl ${
@@ -611,6 +642,52 @@ export default function App() {
                   </button>
                 </form>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Testimonials Section */}
+          <motion.div 
+            className="md:col-span-12 mt-20 mb-10"
+            variants={itemVariants}
+          >
+            <div className="text-center mb-16 px-4">
+              <span className="inline-block px-4 py-1 bg-olive/10 text-olive text-[10px] uppercase tracking-[0.2em] font-bold rounded-full mb-4">
+                {t.testimonials.tag}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-olive leading-tight">
+                {t.testimonials.title}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {t.testimonials.items.map((testimonial, i) => (
+                <motion.div 
+                  key={i}
+                  className="bg-card p-10 rounded-[2.5rem] border border-card-border shadow-xl shadow-clay/5 relative group hover:-translate-y-2 transition-all duration-500"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="absolute top-8 right-8 text-clay/20 group-hover:text-clay/40 transition-colors">
+                    <MessageCircle size={40} />
+                  </div>
+                  <p className="text-olive/80 text-lg leading-relaxed italic mb-8 relative z-10">
+                    "{testimonial.text}"
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-clay/20 scale-90 group-hover:scale-100 transition-transform duration-500">
+                      <img 
+                        src={testimonial.avatar} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-serif text-xl text-olive">{testimonial.name}</h4>
+                      <p className="text-clay text-[10px] font-bold uppercase tracking-widest">{testimonial.role}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </motion.div>

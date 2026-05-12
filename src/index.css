@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #FDFBF7;
+  --color-cream: #F9F7F2;
   --color-olive: #3D5A44;
   --color-clay: #A67C52;
   --color-ink: #1A1A1A;
@@ -20,9 +20,22 @@
 
 @layer base {
   body {
-    @apply bg-cream text-ink font-sans antialiased transition-colors duration-300;
+    @apply bg-cream text-ink font-sans antialiased transition-colors duration-300 relative;
   }
   
+  body::before {
+    content: "";
+    @apply fixed inset-0 z-[-1] opacity-[0.03] pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50L20 50L50 20L80 50L50 80L20 50z M50 0L0 50L50 100L100 50L50 0z' fill='%23A67C52' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+  }
+
+  body::after {
+    content: "";
+    @apply fixed inset-0 z-[-1] opacity-[0.04] pointer-events-none;
+    background-image: url("https://www.transparenttextures.com/patterns/vintage-speckled-paper.png");
+  }
+
   h1, h2, h3, h4 {
     @apply font-serif;
   }
@@ -34,6 +47,11 @@
     --color-card-border: rgba(253, 251, 247, 0.05);
     background-color: var(--color-cream);
     color: var(--color-ink);
+  }
+
+  .dark body::before {
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 50L20 50L50 20L80 50L50 80L20 50z M50 0L0 50L50 100L100 50L50 0z' fill='%23FFFFFF' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
 
   .hero-slide {
@@ -48,7 +66,7 @@
   }
 }
 
-/* Moroccan Zellige Pattern Overlay */
+/* Moroccan Zellige Pattern Overlay - More detailed */
 .zellige-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l5.878 18.09h19.022l-15.39 11.18 5.878 18.09-15.389-11.18-15.389 11.18 5.878-18.09-15.39-11.18h19.022L30 0z' fill='%23A67C52' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23A67C52' fill-opacity='0.08'%3E%3Cpath d='M40 0L50 30H80L55 50L65 80L40 60L15 80L25 50L0 30H30L40 0z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
