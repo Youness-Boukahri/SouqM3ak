@@ -132,7 +132,7 @@ export default function App() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: lang === 'AR' ? 'الدار البيضاء' : 'Casablanca',
+    city: lang === 'AR' ? 'أكادير' : 'Agadir',
     date: '',
     service: lang === 'AR' ? 'خدمة التوصيل دهاب و اياب الى السوق' : 'Souq Shuttle Service'
   });
