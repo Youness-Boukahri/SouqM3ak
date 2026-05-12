@@ -38,7 +38,7 @@ const translations = {
   EN: {
     nav: { home: "Home", services: "Services", guide: "Guide", contact: "Contact", bookNow: "Book Now" },
     hero: { tag: "The Premium Eid Experience", title: "Tradition", subtitle: "Elevated.", authentic: "Authenticity Guaranteed", direct: "Direct from Vetted Moroccan Farms", bookYour: "Book Your", service: "Service" },
-    headline: { title: "SouqMa3ak: Your Trusted Source for Moroccan Eid Traditions", desc: "Hand-selected Sardi sheep, direct from farmers. Traditional, verified, delivered. Your seamless connection to the heart of the Souq.", cta: "EXPLORE SELECTION" },
+    headline: { title: "SouqM3ak: Your Trusted Source for Moroccan Eid Traditions", desc: "Hand-selected Sardi sheep, direct from farmers. Traditional, verified, delivered. Your seamless connection to the heart of the Souq.", cta: "EXPLORE SELECTION" },
     services: { 
       sardi: { title: "Sardi Selection", desc: "Purebred Sardi sheep with distinctive black features." },
       farm: { title: "Farm Verification", desc: "We personally vet every farm in our dedicated network." },
@@ -67,7 +67,7 @@ const translations = {
   FR: {
     nav: { home: "Accueil", services: "Services", guide: "Guide", contact: "Contact", bookNow: "Réserver" },
     hero: { tag: "L'Expérience Premium de l'Aïd", title: "Tradition", subtitle: "Sublimée.", authentic: "Authenticité Garantie", direct: "Directement des fermes marocaines certifiées", bookYour: "Réservez Votre", service: "Service" },
-    headline: { title: "SouqMa3ak : Votre source de confiance pour les traditions de l'Aïd", desc: "Moutons Sardi sélectionnés à la main, en direct des éleveurs. Traditionnel, vérifié, livré. Votre lien direct avec le cœur du Souq.", cta: "EXPLORER LA SÉLECTION" },
+    headline: { title: "SouqM3ak : Votre source de confiance pour les traditions de l'Aïd", desc: "Moutons Sardi sélectionnés à la main, en direct des éleveurs. Traditionnel, vérifié, livré. Votre lien direct avec le cœur du Souq.", cta: "EXPLORER LA SÉLECTION" },
     services: { 
       sardi: { title: "Sélection Sardi", desc: "Moutons Sardi de race pure avec des traits noirs distinctifs." },
       farm: { title: "Vérification Ferme", desc: "Nous contrôlons personnellement chaque ferme de notre réseau." },
@@ -239,7 +239,7 @@ export default function App() {
               referrerPolicy="no-referrer"
             />
             <span className={`font-serif font-bold text-lg md:text-xl tracking-tight hidden sm:block ${theme === 'dark' ? 'text-white' : 'text-[#2d6a4f]'}`}>
-              SouqMa3ak
+              SouqM3ak
             </span>
           </div>
 
@@ -706,7 +706,7 @@ export default function App() {
                   className="w-12 h-12 rounded-full object-cover"
                   referrerPolicy="no-referrer"
                 />
-                <span className="font-serif font-bold text-3xl tracking-tight">SouqMa3ak</span>
+                <span className="font-serif font-bold text-3xl tracking-tight">SouqM3ak</span>
               </div>
               <p className="text-cream/60 max-w-sm mb-8 leading-relaxed font-light">
                 {t.footer.desc}
@@ -751,7 +751,7 @@ export default function App() {
           </div>
           
           <div className="pt-10 border-t border-cream/10 flex flex-col md:row items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.2em] opacity-40">
-            <p>{lang === 'AR' ? '© 2024 سوق معاك للخدمات المتميزة. جميع الحقوق محفوظة.' : '© 2024 SOUQMA3AK CONCIERGE. ALL RIGHTS RESERVED.'}</p>
+            <p>{lang === 'AR' ? '© 2024 سوق معاك للخدمات المتميزة. جميع الحقوق محفوظة.' : '© 2024 SOUQM3AK CONCIERGE. ALL RIGHTS RESERVED.'}</p>
             <div className="flex items-center gap-8">
               <a href="#">{lang === 'AR' ? 'الخصوصية' : 'Privacy'}</a>
               <a href="#">{lang === 'AR' ? 'الشروط' : 'Terms'}</a>
